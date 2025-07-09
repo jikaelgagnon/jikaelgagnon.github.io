@@ -30,11 +30,11 @@ This can be seen as a weighted sum of values, where the weight for $x_i$ is $P(X
 #### Example
 Let $X = 0$ denote a coinflip of heads, and $X = 1$ denote tails, where $P(X = 0) = P(X = 1) = 1/2$, then our expected value should be directly in the middle of zero and one, since each outcome has the same probability (or weight); indeed, when we plug this into the equation above, we see that 
 
-$$E[X] = 0*P(X = 0) + 1*P(X = 1) = 0*(1/2) + 1*(1/2) =1/2$$
+$$\mathbb{E}[X] = 0*P(X = 0) + 1*P(X = 1) = 0*(1/2) + 1*(1/2) =1/2$$
 
-Now, what if instead we had a biased coin? That is, what if one outcome was much more likely than the other? For example, let's set $P(X = 0) = 0.1$ and $P(X = 1) = 0.9$. In this case, our expected value should be much closer to 1 than 0.9, since tails is a lot more likely. Once again, we see that the the output of the equation matches our intuition:
+Now, what if instead we had a biased coin? That is, what if one outcome was much more likely than the other? For example, let's set $P(X = 0) = 0.1$ and $P(X = 1) = 0.9$. In this case, our expected value should be much closer to 1 than 0, since tails is a lot more likely. Once again, we see that the the output of the equation matches our intuition:
 
-$$E[X] = 0*P(X = 0) + 1*P(X = 1) = 0*(0.1) + 1*(0.9) = 0.9$$
+$$\mathbb{E}[X] = 0*P(X = 0) + 1*P(X = 1) = 0*(0.1) + 1*(0.9) = 0.9$$
 
 ### Continuous case
 
@@ -50,7 +50,7 @@ You might be thinking "Ok, I understand why probabilities are zero, but surely t
 #### Coming up with an equation for expected value
 Recall that earlier our expected value was computed as a weighted sum of values, where the weights are point probabilities. In the continuous case, we have seen that probabilities are swapped out for likelihoods, and since we have an infinite number of values, we should take an integral. Thus, our expected value can be written as 
 
-$$E[X] = \int_{-\infty}^{+\infty}p(x)xdx$$
+$$\mathbb{E}[X] = \int_{-\infty}^{+\infty}p(x)xdx$$
 
 Again, the idea here is that the points with higher likelihood have a greater weight in the computing the expected value. 
 
@@ -60,7 +60,7 @@ Again, the idea here is that the points with higher likelihood have a greater we
 
 > ##### Important Note
 >
-> A concept that is often glossed over is that in practice we typically don't compute the actual expected value, since that would require knowing the true underlying distribution of our data (which is often unrealistic). Instead, we estimate it using an **unbiased estimator**. This is a value that we can compute using our dataset that _estimates_ the true value of some parameter; as the amount of data increases, we approach the true value. More formally, an estimator $\hat{\theta}$ is said to be *unbiased* for parameter $\theta$ if $\mathbb{E}[\hat{\theta}] = \theta$. For example, suppose we are trying to estimate $\mu_X = \mathbb{E}[X]$; it can be shown that the sample mean $\bar{X} = \frac{1}{N} \sum_{i=1}^N x^{(i)}$ is an unbiased estimator of $\mu_X$ (so $\mathbb{E}[\bar{X}] = \mu_X$). As we will see later, unbiased estimators also exist for many other parameters (such as the variance and covariance).
+> A concept that is often glossed over is that in practice we typically don't compute the actual expected value, since that would require knowing the true underlying distribution of our data (which is often unrealistic). Instead, we estimate it using an **unbiased estimator**. This is a value that we can compute using our dataset that _estimates_ the true value of some parameter; as the amount of data increases, we approach the true value. More formally, an estimator $\hat{\theta}$ is said to be *unbiased* for parameter $\theta$ if $\mathbb{E}[\hat{\theta}] = \theta$. For example, suppose we are trying to estimate $\mu_X = \mathbb{E}[X]$; it can be shown that the sample mean $\bar{X} = \frac{1}{N} \sum_{i=1}^N x^{(i)}$ is an unbiased estimator of $\mu_X$ (so $\mathbb{E}[\bar{X}] = \mu_X$). As we will see later, unbiased estimators also exist for many other parameters (such as the variance and covariance). We will also show later that these unbiased estimators indeed converge to the parameters they are trying to estimate.
 {: .block-warning }
 
 For the continuous case, showing a worked out example is a bit trickier. Instead, we will take some real world data and *estimate* the expected value using an unbiased estimator. An unbiased estimator for the expected value is the sample mean (typically denoted $\bar{X}$):
@@ -73,7 +73,7 @@ For our real world data, I downloaded [height and weight data from Kaggle](https
 
 First, it would be nice to plot the probabilities of each height; the problem is that heights are a continous variable, so the probability of an exact height is very low (eg. the odds that someone has a height of 66.72 inches is quite low, but the probability of a height *close to* 66.72 might be quite high). To deal with this, we will group our data points into *bins*. These are simply intervals in the data; thus, instead of counting the probability of an exact value, we will compute the probability that a point falls into a bin. Here is a visualization of our data being split into $n=30$ bins, where the boundaries of the bins are marked by red-dotted lines:
 
-{% include figure.liquid path="../assets/img/bins.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid path="../assets/img/bins.png" class="img-fluid rounded z-depth-1 w-70 mx-auto d-block" zoomable=true %}
 
 Using the same bins, we can plot the density of our data (where density for a bin is ( of points in bin) / (total  of points)):
 
@@ -96,7 +96,7 @@ plt.title(f"Height densities with n={n_bins} bins")
 plt.show()
 ```
 
-{% include figure.liquid path="../assets/img/height_density.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid path="../assets/img/height_density.png" class="img-fluid rounded z-depth-1 w-50 mx-auto d-block" zoomable=true %}
 
 Now that the concept of bins is (hopefully) clear, the plot should hopefully make sense. Now we can simply compute the expected value. As seen above, we can simply do this by calculating the mean
 
@@ -124,7 +124,7 @@ plt.show()
 ```
 
 
-{% include figure.liquid path="../assets/img/heights_with_mean.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid path="../assets/img/heights_with_mean.png" class="img-fluid rounded z-depth-1 w-50 mx-auto d-block" zoomable=true %}
 
 In this case, our expected value is roughly $68$, which seems to be roughly at the peak of our data. Importantly, note that the expected value will not *always* be at the peak of the data; the reason it's in at the peak in this case is because the data is symmetrical around the peak.
 
@@ -153,7 +153,7 @@ plt.show()
 
 ```
 
-{% include figure.liquid path="assets/img/scaled_heights.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid path="assets/img/scaled_heights.png" class="img-fluid rounded z-depth-1 w-50 mx-auto d-block" zoomable=true %}
 
 The new expected value $\mathbb{E}[f(X)] = \mathbb{E}[2X]$ is twice the mean from before! This makes sense, since each input of $f$ maps to a unique output, the distribution should remain the same, but with each value doubled (ie. if $x_i$ has likelihood $p_i$ in our original data, then $f(x_i)$ will have the same likelihood in the our new data).
 
@@ -217,7 +217,7 @@ plt.show()
 
 ```
 
-{% include figure.liquid path="assets/img/height_with_variance.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid path="assets/img/height_with_variance.png" class="img-fluid rounded z-depth-1 w-50 mx-auto d-block" zoomable=true %}
 
 If our data were more closely centered around the mean, our variance would be smaller, and if it were more spread out, the variance would be larger.
 
@@ -230,7 +230,10 @@ If our data were more closely centered around the mean, our variance would be sm
 
 ### Expected value in higher dimensions
 
-In machine learning, we often deal with higher dimensional data. For example, our input data might contain the heights and weights of various individuals. In this case, each of our data point can be represented as 2D vector, where the first element is the height and the second is the weight. That is, our dataset is a set of points $x^{(i)} = [x^{(i)}_1, x^{(i)}_2]$, where $x^{(i)}_1$ is the height of invidual $i$ and $x^{(i)}_2$ is their weight. In this case, instead of computing a scalar for the expected value, we compute a vector $\vec{mu_X} = [\mu_{x_1}, \mu_{x_2}]$, where $\mu_{x_1}$ is the expected value looking only at height, and $\mu_{x_2}$ is the mean looking only at weight.
+In machine learning, we often deal with higher-dimensional data. For example, our input data might contain the heights and weights of various individuals. In this case, each data point can be represented as a 2D vector, where the first element is the height and the second is the weight. That is, our dataset is a set of points $x^{(i)} = [x^{(i)}_1, x^{(i)}_2]$, where $x^{(i)}_1$ is the height of individual $i$, and $x^{(i)}_2$ is their weight.
+
+In this case, instead of computing a scalar for the expected value, we compute a vector $\mu_X = [\mu_{x_1}, \mu_{x_2}]$, where $\mu_{x_1}$ is the expected value looking only at height, and $\mu_{x_2}$ is the mean looking only at weight.
+
 
 ### Vectorizing our equations
 
@@ -300,7 +303,7 @@ plt.title("Height vs. Weight with Mean Vector")
 plt.show()
 ```
 
-{% include figure.liquid path="assets/img/height_weight.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid path="assets/img/height_weight.png" class="img-fluid rounded z-depth-1 w-50 mx-auto d-block" zoomable=true %}
 
 As we saw above, the mean can be generalized to $d$-dimensions. The subsequent section will go over covariance, which is the higherdimensional generalization of variance.  
 
@@ -315,7 +318,7 @@ The *covariance* between two random variables $X$ and $Y$ is $\text{Cov}(X,Y) = 
 2. Negative means that on average, when $X$ is above its mean then $Y$ is below (or vice-versa), which means they grow in opposite directions.
 3. Close to 0 means neither of the above are true, so it must mean there is no relationship in the direction in which they grow (not the same nor the opposite)
 
-{% include figure.liquid path="assets/img/covariance.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid path="assets/img/covariance.png" class="img-fluid rounded z-depth-1 w-70 mx-auto d-block" zoomable=true %}
 
 As usual, the way in which this is computed depends on whether we're in the discrete or continuous case:
 
@@ -423,8 +426,250 @@ We get a correlation of 0.50, which means height are weight are moderately corre
 1. Correlation is just normalized covariance
 2. Correlation provides a way to compare data from different experiments
 
-# A deep dive into the covariance matrix
-TODO...
-
 # The Gaussian
-TODO...
+
+The Gaussian or Normal distribution is an extremely common distribution in machine learning. It's important to understand where it comes from and how it works.
+
+## Univariate Gaussian
+
+In the univariate case, the equation for Gaussian is:
+
+$$f(x) = \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$$
+
+Let's start by getting some intuition for how and why the parameters $\mu$ and $\sigma$ control the shape of the curve. 
+
+Try [this Demos link](https://www.desmos.com/calculator/c0ie6khes5) to play around and generate the following plot.
+
+Here is a plot of the quadratic term $-(x-\mu)^2/{2\sigma^2}$ :
+
+<div class="text-center">
+<iframe src="https://www.desmos.com/calculator/7ftryivkkx?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+Changing $\mu$ will shift the location of the maximum (ie. where the function evaluates to 0). Decreasing $\sigma$ makes the rate at which the function decreases higher (ie. it tightens it up). Here we have set $\sigma$ to 1, 0.5, and 0.1, which correspond to the red, orange, and green lines respectively:
+
+<div class="text-center">
+<iframe src="https://www.desmos.com/calculator/bvkdyd8wgo?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+Next, when we pass it through the exponential function, we make all the values positive (since $e^x > 0, \forall x$  ). Since the quadratic has a maximum at 0 when $x=\mu$, our inputs to the quadratic are all $\leq 0$. Also, since the the quadratic gets steeper and steeper as we move away from the mean, the exponential will get flatter and flatter (since the exponential approaches 0). In the following image is the mapping from a quadratic to the exponential $e^{\left(-\frac{1}{2\sigma^{2}}\left(x-\mu\right)^{2}\right)}$ (in purple):
+
+<div class="text-center">
+<iframe src="https://www.desmos.com/calculator/vua8jlh7pc?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+Finally, we divide by the constant $\sqrt{2\pi\sigma^2}$ to ensure that the function integrates to one. The final result is a standard normal distribution, shown in blue:
+
+<div class="text-center">
+<iframe src="https://www.desmos.com/calculator/yd0kgw2ftx?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+</div>
+
+
+## Advancing to the multivariate case
+
+Now we describe the probabilities over a vector $x \in \mathbb{R}^D$. Now, our distribution is defined by a mean vector $\mu \in \mathbb{R}^D$ and a covariance matrix $\Sigma \in \mathbb{R}^{D \times D}$.  The entry $\Sigma_i,j$ is the covariance $\text{Cov}[X_i, X_j] = \mathbb{E}[(X_i - \mu_i)(X_j - \mu_j)]$  We end up with the equation:
+
+$$p(x)=\frac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}}\exp \left[ {-\frac{(x-\mu)^T\Sigma^{-1}(x-\mu)}{2}} \right]$$
+
+In the same way as before, the quadratic term returns a scalar that decreases as $x$ grows further from the mean, the curve becomes bell-shaped as a result of the exponential, and we divide by the first term to ensure that it integrates to one. In the next section, we inspect this further, with the example of the bivariate Gaussian, since this is the easiest to visualize.
+
+## Forms of the covariance matrix
+
+There are a few important types of forms the covariance matrix can take:
+- Spherical: diagonal matrix where all elements on the diagonal are the same (ie. $\Sigma = \sigma I$)
+- Diagonal: diagonal matrix where all elements on the diagonal aren't necessarily the same
+- Full: Non-diagonal
+
+Let's write some code to generate some of this data. This can be done easily using some functions built into to NumPy. Let's see what each of these look like:
+
+```python
+mean = np.array([0, 0]) # mean of zero
+
+# Covariance matrices
+spherical_cov = np.array([[1, 0], [0, 1]])
+diagonal_cov = np.array([[5, 0], [0, 3]])
+full_cov = np.array([[5, 1], [1, 3]])
+
+n = 1000  # number of samples
+
+# Generate samples
+x1, y1 = np.random.multivariate_normal(mean, spherical_cov, n).T
+x2, y2 = np.random.multivariate_normal(mean, diagonal_cov, n).T
+x3, y3 = np.random.multivariate_normal(mean, full_cov, n).T
+
+# Create side-by-side subplots
+fig, axes = plt.subplots(1, 3, figsize=(15, 5), sharex=True, sharey=True)
+
+# Plot each distribution
+axes[0].scatter(x1, y1, s=5, color='blue', alpha=0.5)
+axes[0].set_title("Spherical Covariance")
+
+axes[1].scatter(x2, y2, s=5, color='green', alpha=0.5)
+axes[1].set_title("Diagonal Covariance")
+
+axes[2].scatter(x3, y3, s=5, color='red', alpha=0.5)
+axes[2].set_title("Full Covariance")
+
+# Common formatting
+for ax in axes:
+    ax.set_aspect('equal')
+    ax.grid(True)
+    ax.set_xlim(-10, 10)
+    ax.set_ylim(-10, 10)
+
+plt.tight_layout()
+plt.show()
+```
+
+{% include figure.liquid path="assets/img/gaussians.png" class="img-fluid rounded z-depth-1 w-70 mx-auto d-block" zoomable=true %}
+
+We can see that a diagonal covariance stretches the data our in the vertical and horizontal directions, while the full covariance stretches _and_ rotates the data. In the next section, we will understand why.
+
+## A geometric interpretation of the covariance matrix
+Recall from linear algebra that matrices are simply linear transformationsl thus, we can think of the covariance matrix as a linear transformation. In particular, we think of our data as *white data* (data with identity covariance) that was *transformed* by our covariance matrix. In other words, looking at our covariance matrix can tell us how our data was obtained. As we saw above, these transformations are stretches and rotations of our data; to see *why* and *how* it does this, we must first understand some important properties of the covariance matrix:
+
+It turns out that $\Sigma$ is a *symmetric positive semi-definite matrix*. Let's break this down:
+1. Symmetric means that $\Sigma^T = \Sigma$. This makes sense, since all $\Sigma_{i,j} = \text{Cov}(X_i, X_j) = \text{Cov}(X_j, X_i) = \Sigma_{j,i}$
+2. Positive semi-definite means that $x^T \Sigma x \geq 0$ for all $x \in \mathbb{R}^d$.
+
+### Why do these properties matter?
+
+It can be shown that when a matrix is positive semi-definite, we can obtain its _eigen-decomposition_, where:
+
+$$\Sigma = R \Lambda R^T$$
+
+where $\Lambda$ is the eigenvalue matrix and $R$ is a rotation matrix, where the the columns of $R$ are eigenvectors. A slightly clearer way to express this is as $\Sigma = RSS^TR^{-1}$, where $S = \sqrt{\Lambda}$ and the values on the diagonal of $S$ tell you the amount by which each the data is stretched in the direction of each eigenvector. This might be confusing right now; hopefully the following examples will clear this up. The key idea for now is that we can now think of our data as white data that was transformed by a stretch and a rotation; to obtain the stretch and rotation we can use the eigendecomposition of the covariance matrix.
+
+### Seeing it in action
+
+Here we will apply some transformations to some white data and then we will look at the covariance of the transformed data; if the statements above are true, we should be able to reverse-engineer the transformations from the covariance matrix.
+
+Let's start with a simple example. Let's assume our white data was stretched by a factor of $4$ in the $x$-direction and $2$ in the $y$-direction; ie. it was transformed by $S = \text{diag}(4,2)$. Let's see what this does to our data using some code:
+
+```python
+white_data = np.random.multivariate_normal([0, 0], [[1, 0], [0, 1]], 1000)
+x_w, y_w = white_data.T
+S = np.array([[4, 0], [0, 2]])
+S_X = T @ white_data.T
+x_t, y_t = S_X
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
+
+ax1.plot(x_w, y_w, ".")
+ax1.set_title("White data")
+ax2.plot(x_t, y_t, ".")
+ax2.set_title("Stretched data")
+
+
+# Set aspect ratio and equal axis limits
+ax1.set_aspect("equal")
+ax2.set_aspect("equal")
+
+lim = [-10, 10]
+
+ax1.set_xlim(lim)
+ax2.set_xlim(lim)
+ax1.set_ylim(lim)
+ax2.set_ylim(lim)
+
+
+plt.tight_layout()
+plt.show()
+```
+
+{% include figure.liquid path="assets/img/stretch.png" class="img-fluid rounded z-depth-1 w-70 mx-auto d-block" zoomable=true %}
+
+Now let's compute the covariance matrix of our new data and round to the nearest integer:
+
+```python
+V(S_X).round(0)
+```
+
+```
+array([[16., -0.],
+       [-0.,  4.]])
+```
+
+We get $\Sigma = \text{diag}(16, 4) = \text{diag}(4^2, 2^2) = \text{diag}(\sigma_x^2, \sigma_y^2)$. This is a diagonal matrix, so the eigenvalues can be read directly off the diagonal, and are 16 and 4 respectively, and the eigenvectors are the unit vectors. Using the formula above we have $\Sigma = RSS^TR^{-1} = I [\text{diag}(4,2)] [\text{diag}(4,2)]^T I$  (here the rotation matrix is the identity, since no rotation is applied). Indeed, this matches the claim from above, that states that the square roots of the eigenvalues are the amount by which the data is stretched in the directions of the eigenvectors.
+
+What if we want to rotate it too? Let's add a rotation matrix $R$ that rotates the data by $\theta$ radians, then our new transformation is a stretch and a rotation: $T = RS$. The formula for a rotation by $\theta$ radians in 2D is well known and has the form
+
+$$
+R_{\theta} = 
+\begin{bmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{bmatrix}
+$$
+
+We will use this in the code, where we will rotate by $\pi/4$ radians, then we will compute the eigenvectors and plot those too:
+
+```python
+# Get the data
+white_data = np.random.multivariate_normal([0, 0], [[1, 0], [0, 1]], 1000)
+x_w, y_w = white_data.T
+S = np.array([[4, 0], [0, 2]])
+theta = np.pi / 4
+R = np.array([[np.cos(theta), np.sin(theta)],[-np.sin(theta), np.cos(theta)]])
+T_X = R @ S @ white_data.T
+x_t, y_t = T_X
+# Compute covariance and perform eigendecomposition
+sigma = V(T_X.T).round(0)
+eigenvalues, eigenvectors = np.linalg.eig(sigma)
+
+# Plot
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
+
+ax1.plot(x_w, y_w, ".")
+ax1.set_title("White data")
+ax2.plot(x_t, y_t, ".")
+ax2.set_title("Stretched and rotated data")
+
+
+# Set aspect ratio and equal axis limits
+ax1.set_aspect("equal")
+ax2.set_aspect("equal")
+
+# Display eigenvectors
+for i in range(len(eigenvalues)):
+    vec = eigenvectors[:, i]
+    lam = eigenvalues[i]
+    ax2.quiver(0, 0, vec[0]*np.sqrt(lam)*np.sign(lam), vec[1]*np.sqrt(lam)*np.sign(lam), angles='xy', scale_units='xy', scale=1,
+              color='r', width=0.01, zorder=2)
+
+lim = [-10, 10]
+
+ax1.set_xlim(lim)
+ax2.set_xlim(lim)
+ax1.set_ylim(lim)
+ax2.set_ylim(lim)
+
+
+plt.tight_layout()
+plt.show()
+```
+
+{% include figure.liquid path="assets/img/stretch_and_rotate.png" class="img-fluid rounded z-depth-1 w-70 mx-auto d-block" zoomable=true %}
+
+Again, if the statements from earlier hold, then we should be able to perform eigendecomposition on the covariance of our new data and obtain the matrices $S$ and $R$ we used to transform the data: 
+
+```python
+sigma = V(T_X.T).round(0)
+eigenvalues, eigenvectors = np.linalg.eig(sigma)
+np.allclose(eigenvectors, R) # True
+np.allclose(np.sqrt(np.diag(eigenvalues)), S) # True
+```
+
+Thus, we see that indeed, the eigenvector matrix is the same as the rotation matrix, and the eigenvalues are the squares of the elements in the stretching matrix.
+
+## Conclusion
+
+This blog post is pretty all over the place, but hopefully it provided a bit of clarification and insight into some ML topics that are often skimmed past in many books and courses.
+
+---
+
+References
+- [The Eigen-Decomposition: Eigenvalues and Eigenvectors](https://personal.utdallas.edu/~herve/Abdi-EVD2007-pretty.pdf)
+-  [Understanding Deep Learning by Simon J.D Prince](https://udlbook.github.io/udlbook/) 
+- [Lesson 4: Multivariate Normal Distribution](https://online.stat.psu.edu/stat505/book/export/html/636)
+- [The Multivariate Gaussian Distribution](https://cs229.stanford.edu/summer2019/gaussians.pdf)
+- [Information about ellipses](https://www.geometrictools.com/Documentation/InformationAboutEllipses.pdf)
