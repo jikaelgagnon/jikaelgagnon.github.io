@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-stats-and-probability-theory-i-wished-i-learned-before-ml",
+        },{id: "post-an-introduction-to-asymmetric-cryptography-through-rsa",
+        
+          title: "An introduction to asymmetric cryptography through RSA",
+        
+        description: "An introduction to the idea of the RSA cryptosystem. RSA is an example of _asymmetric encryption_; this concept is critical to understand SSH, digital signatures, and the blockchain.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/rsa/";
+          
+        },
+      },{id: "post-stats-and-probability-theory-i-wished-i-learned-before-ml",
         
           title: "Stats and probability theory I wished I learned before ML",
         
