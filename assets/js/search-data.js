@@ -16,33 +16,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Materials for courses I&#39;ve taught",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/teaching/";
-          },
-        },{id: "post-an-introduction-to-asymmetric-cryptography-through-rsa",
+        },{id: "post-visualizing-decision-trees",
         
-          title: "An introduction to asymmetric cryptography through RSA",
+          title: "Visualizing Decision Trees",
         
-        description: "An introduction to the idea of the RSA cryptosystem. RSA is an example of asymmetric encryption; this concept is critical to understand SSH, digital signatures, and the blockchain.",
+        description: "Explore how a decision tree classifies wine using an interactive notebook.",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/rsa/";
-          
-        },
-      },{id: "post-stats-and-probability-theory-i-wished-i-learned-before-ml",
-        
-          title: "Stats and probability theory I wished I learned before ML",
-        
-        description: "Covering important aspects of statistics and probability that are frequently glossed over in ML teaching.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/covariance/";
+            window.location.href = "/blog/2026/decision-trees/";
           
         },
       },{
