@@ -7,7 +7,7 @@ categories: ml, learning
 related_posts: false
 ---
 
-Explore how a decision tree classifies wine. Choose two features in the interactive notebook to see the tree and its decision regions.
+An interactive Marimo notebook covering the math and implementation of a decision tree. 
 
 <iframe
   src="{{ '/assets/marimo/decision-tree/index.html' | relative_url }}"
