@@ -85,8 +85,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: My Blog # blog_name will be displayed in your blog page
-blog_description: Notes and tutorials on computer science and machine learning 
+blog_name: Things I've Learned # blog_name will be displayed in your blog page
+blog_description: When I learn new ML concepts I like to build them to test my understanding. Lately, I've been building them with Marimo and publishing the results here.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
