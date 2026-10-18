@@ -2,6 +2,7 @@
 layout: post
 title: Stats and probability theory I wished I learned before ML
 date: 2025-07-07
+published: false
 description: Covering important aspects of statistics and probability that are frequently glossed over in ML teaching.
 categories: ml, stats, learning
 related_posts: false

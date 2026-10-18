@@ -26,4 +26,4 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I'm a undergraduate in computer science at McGill University. I'm currently working on human computer interaction research at McGill and lecturing the MAIS 202 course for the McGill AI Society. Last summer I did research at Mila in under Professor Siamak Ravanbakhsh where I collaborated with researchers at the Samsung SAIT Lab doing materials discovery research.
+I'm an MScAC student at the University of Toronto, pursuing a master's in AI for healthcare. I'm interested in building interpretable machine learning models for diagnosis and prognosis. Previously, I was at McGill University, where I got a degree in CS and math. During that time, I did research on equivariant neural networks at Mila Quebec under Siamak Ravanbakhsh, and worked as an academic lecturer at the McGill Artificial Intelligence Society, where I taught undergraduate students the fundamentals of machine learning in a semester-long bootcamp.
