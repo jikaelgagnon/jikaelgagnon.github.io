@@ -4,6 +4,11 @@
 
 // Typography
 
+body {
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: 400;
+}
+
 p,
 h1,
 h2,
@@ -587,6 +592,14 @@ footer.sticky-bottom {
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
+
+  .post-thumbnail {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+  }
 
   li {
     border-bottom: 1px solid var(--global-divider-color);

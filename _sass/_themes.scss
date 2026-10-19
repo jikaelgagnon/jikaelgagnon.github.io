@@ -10,16 +10,16 @@
   --global-code-bg-color: #f8ede5;
   --global-text-color: #332d29;
   --global-text-color-light: #72665e;
-  --global-theme-color: #b55232;
-  --global-hover-color: #913e25;
+  --global-theme-color: #3b32b5;
+  --global-hover-color: #2c248d;
   --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #342b28;
-  --global-footer-text-color: #dfcfc6;
-  --global-footer-link-color: #f1b296;
+  --global-footer-bg-color: #252342;
+  --global-footer-text-color: #e1dfed;
+  --global-footer-link-color: #c9c5ff;
   --global-distill-app-color: #72665e;
   --global-divider-color: #e5dcd5;
   --global-card-bg-color: #ffffff;
-  --global-highlight-color: #a6482d;
+  --global-highlight-color: #3b32b5;
   --global-back-to-top-bg-color: rgba(
     #{color.channel($black-color, "red", $space: rgb)},
     #{color.channel($black-color, "green", $space: rgb)},
@@ -78,20 +78,20 @@
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --global-bg-color: #211c1a;
-  --global-code-bg-color: #342b26;
-  --global-text-color: #f0e8e2;
-  --global-text-color-light: #bbaaa0;
-  --global-theme-color: #f2a47e;
-  --global-hover-color: #ffc3a1;
-  --global-hover-text-color: #211c1a;
-  --global-footer-bg-color: #171311;
-  --global-footer-text-color: #cdbbb0;
-  --global-footer-link-color: #ffc3a1;
-  --global-distill-app-color: #bbaaa0;
-  --global-divider-color: #493b34;
-  --global-card-bg-color: #302824;
-  --global-highlight-color: #ffc27f;
+  --global-bg-color: #1b1c2a;
+  --global-code-bg-color: #292a40;
+  --global-text-color: #ebecf5;
+  --global-text-color-light: #b8bad1;
+  --global-theme-color: #b4aeff;
+  --global-hover-color: #d0ccff;
+  --global-hover-text-color: #1b1c2a;
+  --global-footer-bg-color: #121320;
+  --global-footer-text-color: #d3d4e5;
+  --global-footer-link-color: #c9c5ff;
+  --global-distill-app-color: #b8bad1;
+  --global-divider-color: #3c3e58;
+  --global-card-bg-color: #252638;
+  --global-highlight-color: #b4aeff;
   --global-back-to-top-bg-color: rgba(
     #{color.channel($white-color, "red", $space: rgb)},
     #{color.channel($white-color, "green", $space: rgb)},

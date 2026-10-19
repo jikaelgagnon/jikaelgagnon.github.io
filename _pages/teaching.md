@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
+title: Teaching
 description: Lecture slides and course materials.
 nav: true
-nav_order: 2
+nav_order: 3
 _styles: |
   .lecture-grid {
     display: grid;
@@ -66,7 +66,6 @@ _styles: |
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
   }
 
   .lecture-card h3 {
@@ -107,7 +106,7 @@ _styles: |
     {% else %}
       <span class="lecture-image" aria-hidden="true">Image placeholder</span>
     {% endif %}
-    <span class="lecture-number">Lecture 01</span>
+    <span class="lecture-number">Lecture 1</span>
     <h3>Introduction &amp; KNNs</h3>
     <span class="lecture-meta"><span>PDF</span><span class="lecture-action">View slides →</span></span>
   </a>
@@ -118,7 +117,7 @@ _styles: |
     {% else %}
       <span class="lecture-image" aria-hidden="true">Image placeholder</span>
     {% endif %}
-    <span class="lecture-number">Lecture 03</span>
+    <span class="lecture-number">Lecture 3</span>
     <h3>Logistic regression, SGD, and mini-batching</h3>
     <span class="lecture-meta"><span>PDF</span><span class="lecture-action">View slides →</span></span>
   </a>
@@ -129,7 +128,7 @@ _styles: |
     {% else %}
       <span class="lecture-image" aria-hidden="true">Image placeholder</span>
     {% endif %}
-    <span class="lecture-number">Lecture 06</span>
+    <span class="lecture-number">Lecture 6</span>
     <h3>Recurrent neural networks, LSTMs, and attention</h3>
     <span class="lecture-meta"><span>PDF</span><span class="lecture-action">View slides →</span></span>
   </a>
@@ -140,7 +139,7 @@ _styles: |
     {% else %}
       <span class="lecture-image" aria-hidden="true">Image placeholder</span>
     {% endif %}
-    <span class="lecture-number">Lecture 07</span>
+    <span class="lecture-number">Lecture 7</span>
     <h3>Word embeddings, attention, and transformers</h3>
     <span class="lecture-meta"><span>PDF</span><span class="lecture-action">View slides →</span></span>
   </a>

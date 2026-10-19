@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /blog/
-title: blog
+title: Blog
 nav: true
 nav_order: 1
 pagination:
@@ -121,13 +121,7 @@ pagination:
     {% assign categories = post.categories | join: "" %}
 
     <li>
-
-{% if post.thumbnail %}
-
-<div class="row">
-          <div class="col-sm-9">
-{% endif %}
-        <h3>
+      <h3>
         {% if post.redirect == blank %}
           <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
         {% elsif post.redirect contains '://' %}
@@ -140,6 +134,9 @@ pagination:
         {% endif %}
       </h3>
       <p>{{ post.description }}</p>
+      {% if post.thumbnail %}
+        <img class="post-thumbnail" src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }} thumbnail" loading="lazy">
+      {% endif %}
       <p class="post-meta">
         {{ read_time }} min read &nbsp; &middot; &nbsp;
         {{ post.date | date: '%B %d, %Y' }}
@@ -173,16 +170,6 @@ pagination:
               {% endfor %}
           {% endif %}
     </p>
-
-{% if post.thumbnail %}
-
-</div>
-
-  <div class="col-sm-3">
-    <img class="card-img" src="{{ post.thumbnail | relative_url }}" style="object-fit: cover; height: 90%" alt="image">
-  </div>
-</div>
-{% endif %}
     </li>
 
     {% endfor %}
