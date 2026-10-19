@@ -4,20 +4,27 @@ const ninja = document.querySelector('ninja-keys');
 // add the home and posts menu items
 ninja.data = [{
     id: "nav-about",
-    title: "about",
+    title: "About",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
   },{id: "nav-blog",
-          title: "blog",
+          title: "Blog",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
           },
+        },{id: "nav-projects",
+          title: "Projects",
+          description: "Research and software projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "nav-teaching",
-          title: "teaching",
+          title: "Teaching",
           description: "Lecture slides and course materials.",
           section: "Navigation",
           handler: () => {
@@ -27,7 +34,7 @@ ninja.data = [{
         
           title: "Visualizing Decision Trees",
         
-        description: "Explore how a decision tree classifies wine using an interactive notebook.",
+        description: "An interactive Marimo notebook covering the math and implementation of a decision tree.",
         section: "Posts",
         handler: () => {
           
