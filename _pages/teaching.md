@@ -6,6 +6,10 @@ description: Lecture slides and course materials.
 nav: true
 nav_order: 3
 _styles: |
+  #tutorials {
+    margin-top: 2rem;
+  }
+
   .lecture-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -68,7 +72,7 @@ _styles: |
     letter-spacing: 0.08em;
   }
 
-  .lecture-card h3 {
+  .lecture-card h4 {
     margin: 0.9rem 0 1.5rem;
     font-size: 1.2rem;
     line-height: 1.4;
@@ -96,7 +100,32 @@ _styles: |
   }
 ---
 
-## MAIS 202: Accelerated Introduction to Machine Learning
+## [MAIS 202: Accelerated Introduction to Machine Learning](https://mcgillai.com/mais202)
+
+I served as an academic lecturer for the McGill AI Society, teaching MAIS 202: Accelerated Introduction to Machine Learning. Designed to address the lack of introductory AI courses for undergraduates, this intensive ten-week course equipped a cohort of 30 students with foundational knowledge and practical skills to pursue AI roles in industry.
+
+### Tutorials
+
+I created and recorded these tutorials for MAIS 202 to help students pick up the basics of NumPy and PyTorch:
+
+<div class="lecture-grid">
+  <a class="lecture-card" href="https://youtu.be/uvEQohgvL1Y" aria-label="Watch Essential NumPy for Machine Learning on YouTube">
+    <img class="lecture-image" src="https://i.ytimg.com/vi/uvEQohgvL1Y/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+    <span class="lecture-number">MAIS 202</span>
+    <h4>Essential NumPy for Machine Learning</h4>
+    <span class="lecture-meta"><span>YouTube</span><span class="lecture-action">Watch video →</span></span>
+  </a>
+  <a class="lecture-card" href="https://youtu.be/-s8TzdXLLYg" aria-label="Watch Essential PyTorch for Machine Learning on YouTube">
+    <img class="lecture-image" src="https://i.ytimg.com/vi/-s8TzdXLLYg/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+    <span class="lecture-number">MAIS 202</span>
+    <h4>Essential PyTorch for Machine Learning</h4>
+    <span class="lecture-meta"><span>YouTube</span><span class="lecture-action">Watch video →</span></span>
+  </a>
+</div>
+
+### Lectures
+
+I created these lecture slides from scratch, emphasizing intuition and conceptual understanding over detailed mathematical derivations. The slides are intentionally detailed so students can read through them independently and revisit the material at home:
 
 <div class="lecture-grid">
   <a class="lecture-card" href="{{ '/assets/pdf/mais-202/lecture-01.pdf' | relative_url }}" aria-label="Lecture 1: Introduction and KNNs (PDF, 131 pages)">
@@ -107,7 +136,7 @@ _styles: |
       <span class="lecture-image" aria-hidden="true">Image placeholder</span>
     {% endif %}
     <span class="lecture-number">Lecture 1</span>
-    <h3>Introduction &amp; KNNs</h3>
+    <h4>Introduction &amp; KNNs</h4>
     <span class="lecture-meta"><span>PDF</span><span class="lecture-action">View slides →</span></span>
   </a>
   <a class="lecture-card" href="{{ '/assets/pdf/mais-202/lecture-03.pdf' | relative_url }}" aria-label="Lecture 3: Logistic regression, SGD, and mini-batching (PDF, 209 pages)">
@@ -118,7 +147,7 @@ _styles: |
       <span class="lecture-image" aria-hidden="true">Image placeholder</span>
     {% endif %}
     <span class="lecture-number">Lecture 3</span>
-    <h3>Logistic regression, SGD, and mini-batching</h3>
+    <h4>Logistic regression, SGD, and mini-batching</h4>
     <span class="lecture-meta"><span>PDF</span><span class="lecture-action">View slides →</span></span>
   </a>
   <a class="lecture-card" href="{{ '/assets/pdf/mais-202/lecture-06.pdf' | relative_url }}" aria-label="Lecture 6: Recurrent neural networks, LSTMs, and attention (PDF, 171 pages)">
@@ -129,7 +158,7 @@ _styles: |
       <span class="lecture-image" aria-hidden="true">Image placeholder</span>
     {% endif %}
     <span class="lecture-number">Lecture 6</span>
-    <h3>Recurrent neural networks, LSTMs, and attention</h3>
+    <h4>Recurrent neural networks, LSTMs, and attention</h4>
     <span class="lecture-meta"><span>PDF</span><span class="lecture-action">View slides →</span></span>
   </a>
   <a class="lecture-card" href="{{ '/assets/pdf/mais-202/lecture-07.pdf' | relative_url }}" aria-label="Lecture 7: Word embeddings, attention, and transformers (PDF, 157 pages)">
@@ -140,7 +169,7 @@ _styles: |
       <span class="lecture-image" aria-hidden="true">Image placeholder</span>
     {% endif %}
     <span class="lecture-number">Lecture 7</span>
-    <h3>Word embeddings, attention, and transformers</h3>
+    <h4>Word embeddings, attention, and transformers</h4>
     <span class="lecture-meta"><span>PDF</span><span class="lecture-action">View slides →</span></span>
   </a>
 </div>

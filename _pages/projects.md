@@ -108,6 +108,7 @@ _styles: |
       <img src="https://raw.githubusercontent.com/arnab39/equiadapt/main/utils/equiadapt_sam.gif" alt="EquiAdapt preview" loading="lazy" width="640" height="360">
     </span>
     <h2>EquiAdapt</h2>
+    <p><strong>Work completed at <a href="https://mila.quebec/en">Mila</a>.</strong></p>
     <p>A PyTorch library for making existing neural networks equivariant by learning to canonicalize transformed inputs, based on <a href="https://arxiv.org/pdf/2310.01647">Mondal et al.</a> </p>
     <a class="project-action" href="https://github.com/arnab39/equiadapt" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
   </div>
@@ -117,6 +118,7 @@ _styles: |
       <img src="https://alexjbrinson.github.io/ComputationalPhysicsLab/nBodySimulator/nBodyWithTraceHistory.gif" alt="N-body simulation with particle trails" loading="lazy" width="640" height="360">
     </span>
     <h2>Fixed-Horizon State Prediction for the N-Body Problem with Learned Canonicalization</h2>
+    <p><strong>Work completed at <a href="https://mila.quebec/en">Mila</a>.</strong></p>
     <p>Using learned canonicalization from <a href="https://arxiv.org/abs/2211.06489">Kaba et al.</a> with a Transformer to predict fixed-horizon state for the N-body problem.</p>
     <a class="project-action" href="https://github.com/jikaelgagnon/canonical_network" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
   </div>
