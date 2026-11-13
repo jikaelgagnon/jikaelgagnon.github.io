@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-convolution-from-the-ground-up",
+        },{id: "post-group-theory-crash-course",
+        
+          title: "Group Theory Crash Course",
+        
+        description: "An interactive Marimo notebook exploring groups, group actions, symmetries, and cyclic groups.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/group-theory/";
+          
+        },
+      },{id: "post-convolution-from-the-ground-up",
         
           title: "Convolution from the Ground Up",
         
