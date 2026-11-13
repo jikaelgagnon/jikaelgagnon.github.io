@@ -2,13 +2,13 @@
 layout: post
 title: Visualizing Decision Trees
 date: 2026-10-18
-description: An interactive Marimo notebook covering the math and implementation of a decision tree. 
+description: An interactive Marimo notebook covering the math and implementation of a decision tree.
 thumbnail: /assets/img/decision-tree.png
 categories: ml, learning
 related_posts: false
 ---
 
-An interactive Marimo notebook covering the math and implementation of a decision tree. 
+An interactive Marimo notebook covering the math and implementation of a decision tree.
 
 <iframe
   src="{{ '/assets/marimo/decision-tree/index.html' | relative_url }}"
