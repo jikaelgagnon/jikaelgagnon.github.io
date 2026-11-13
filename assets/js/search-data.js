@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-visualizing-decision-trees",
+        },{id: "post-convolution-from-the-ground-up",
+        
+          title: "Convolution from the Ground Up",
+        
+        description: "An interactive Marimo notebook exploring discrete, continuous, and image convolutions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/convolution/";
+          
+        },
+      },{id: "post-visualizing-decision-trees",
         
           title: "Visualizing Decision Trees",
         
