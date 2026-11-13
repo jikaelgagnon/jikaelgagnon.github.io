@@ -8,6 +8,8 @@ categories: ml, learning
 related_posts: false
 ---
 
+<p><a href="{{ '/assets/marimo/decision-tree/index.html' | relative_url }}">View the notebook in full screen for a better viewing experience</a>.</p>
+
 An interactive Marimo notebook covering the math and implementation of a decision tree.
 
 <iframe
@@ -18,5 +20,3 @@ An interactive Marimo notebook covering the math and implementation of a decisio
   style="border: 0;"
   loading="lazy">
 </iframe>
-
-<p><a href="{{ '/assets/marimo/decision-tree/index.html' | relative_url }}">Open the notebook in a full page</a>.</p>

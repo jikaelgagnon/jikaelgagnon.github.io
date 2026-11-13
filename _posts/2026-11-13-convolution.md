@@ -8,6 +8,8 @@ categories: ml, learning
 related_posts: false
 ---
 
+<p><a href="{{ '/assets/marimo/convolution/index.html' | relative_url }}">View the notebook in full screen for a better viewing experience</a>.</p>
+
 An interactive Marimo notebook exploring discrete, continuous, and image convolutions.
 
 <iframe
@@ -18,5 +20,3 @@ An interactive Marimo notebook exploring discrete, continuous, and image convolu
   style="border: 0;"
   loading="lazy">
 </iframe>
-
-<p><a href="{{ '/assets/marimo/convolution/index.html' | relative_url }}">Open the notebook in a full page</a>.</p>
